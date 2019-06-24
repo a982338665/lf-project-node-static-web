@@ -1,0 +1,7 @@
+
+# node_modules 不写也行，npm会自动忽略
+# build --> npm 上传的是已编译文件即 build 下，而非源文件
+# https://docs.npmjs.com/misc/developers -->开发文档
+# 永远不会忽略的文件：package.json README LICENSE
+src
+test

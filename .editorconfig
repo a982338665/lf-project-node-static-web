@@ -1,0 +1,5 @@
+
+# 官网：editorconfig.org
+
+# 是否为顶层文件，防止一直往上级目录找寻
+root = true
