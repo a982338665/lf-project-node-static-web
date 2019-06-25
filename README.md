@@ -47,3 +47,23 @@
     
     1.安装 ：npm i handlebars
     2.使用：src/helper/route.js
+    
+**6.启动：**
+
+    1.nodemon src/app.js 
+        访问localhost:3000 会直接进如src目录
+    2.nodemon app.js 
+        访问localhost:3000 会直接该项目下，而非src目录下
+        
+**7.range范围请求:rang.js**
+
+    1.range：byte =[start]-[end]
+    2.Accept-Ranges:bytes
+    3.Content-Range:bytes start-end/total
+    
+    4.curl测试：
+        curl 127.0.0.1::3000/LICENCE    打开文件（含所有内容）
+        curl -I 127.0.0.1::3000/LICENCE 查看请求头内容
+        curl -i 127.0.0.1::3000/LICENCE 查看请求头内容 并且 打开文件（含所有内容）
+        curl -r 0-10 -i 127.0.0.1::3000/LICENCE 查看请求头内容 并且 打开文件（下标为0到下标为10的内容）
+        

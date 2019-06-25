@@ -12,6 +12,7 @@ const readdir = promisify(fs.readdir);
 const source = fs.readFileSync(path.join(__dirname, '../template/dir.tpl'), 'utf-8');
 const template = Handlebars.compile(source);
 const compress = require('./compress');
+const range = require('./range');
 
 module.exports = async function (req, res, filePath) {
 //代码优化
@@ -22,7 +23,15 @@ module.exports = async function (req, res, filePath) {
             const contentType = mime(filePath);
             //如果是文本文件 需要加charset= utf8
             res.setHeader('Content-Type', contentType);
-            let rs = fs.createReadStream(filePath);
+            let rs;
+            const {code, start, end} = range(stats.size(), req, res);
+            if (code === 200) {
+                rs = fs.createReadStream(filePath);
+            }else{
+                //范围请求
+                res.statusCode = 206;
+                rs = fs.createReadStream(filePath,{start,end});
+            }
             /*if (filePath.match(config.compress)) {
                 //对某些文件进行压缩
                 rs = compress(rs, req, res);
