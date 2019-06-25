@@ -13,6 +13,7 @@ const source = fs.readFileSync(path.join(__dirname, '../template/dir.tpl'), 'utf
 const template = Handlebars.compile(source);
 const compress = require('./compress');
 const range = require('./range');
+const cache = require('./cache');
 
 module.exports = async function (req, res, filePath) {
 //代码优化
@@ -23,6 +24,12 @@ module.exports = async function (req, res, filePath) {
             const contentType = mime(filePath);
             //如果是文本文件 需要加charset= utf8
             res.setHeader('Content-Type', contentType);
+            //添加浏览器缓存
+            if(cache(stats,req,res)){
+                res.statusCode = 304;
+                res.end();
+                return;
+            }
             let rs;
             const {code, start, end} = range(stats.size, req, res);
             if (code === 200) {

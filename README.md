@@ -66,4 +66,10 @@
         curl -I 127.0.0.1::3000/LICENCE 查看请求头内容
         curl -i 127.0.0.1::3000/LICENCE 查看请求头内容 并且 打开文件（含所有内容）
         curl -r 0-10 -i 127.0.0.1::3000/LICENCE 查看请求头内容 并且 打开文件（下标为0到下标为10的内容）
-        
+
+**8.缓存header:浏览器缓存**
+
+    1.Expires,Cache-Control
+    2.If-Modified-Since / Last-Modified
+    3.If-None_Match / ETag
+    
