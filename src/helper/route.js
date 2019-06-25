@@ -24,7 +24,7 @@ module.exports = async function (req, res, filePath) {
             //如果是文本文件 需要加charset= utf8
             res.setHeader('Content-Type', contentType);
             let rs;
-            const {code, start, end} = range(stats.size(), req, res);
+            const {code, start, end} = range(stats.size, req, res);
             if (code === 200) {
                 rs = fs.createReadStream(filePath);
             }else{
