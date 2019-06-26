@@ -132,3 +132,11 @@
             node-static-web
             node-static-web -p 9999
             node-static-web -d /usr
+    
+**10.linux正式环境部署npm项目：**
+    
+    以anydoor为例：
+    1.npm i -g anydoor 【全局安装】
+    2.anydoor -d /usr -h 线上环境的内网ip -p 8080  【阿里云服务器的内网ip】
+    3.以阿里云为例，需要配置防火墙和安全局组规则，放开8080 端口
+    4.浏览器中访问 公网ip + 8080
