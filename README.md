@@ -1,4 +1,5 @@
 # node-static-web
+#项目原名:anydoor 可直接npm下载使用
 
 **1.项目文件介绍:**
 
@@ -114,3 +115,20 @@
         x位：大版本升级，不保证兼容
         当配置为1.2.*表示bug自动升级
         当配置为2.X时表示内容自动升级
+        
+**9.npm发布安装：**
+
+    1.npm官网注册账号：a982338665
+    2.上传git托管
+    3.npm login
+        账号
+        密码
+        Email
+    4.npm publish
+    5.验证：
+        1.登录官网查询
+        2.npm i -g node-static-web
+        3.命令执行：
+            node-static-web
+            node-static-web -p 9999
+            node-static-web -d /usr
