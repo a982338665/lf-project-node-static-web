@@ -3,7 +3,6 @@ const path = require('path');
 const mime = require('../helper/mime');
 //1.引用
 const Handlebars = require('handlebars');
-const config = require('../conf/defaultConfig');
 //使用工具类去掉回调
 const promisify = require('util').promisify;
 const stat = promisify(fs.stat);
@@ -15,7 +14,7 @@ const compress = require('./compress');
 const range = require('./range');
 const cache = require('./cache');
 
-module.exports = async function (req, res, filePath) {
+module.exports = async function (req, res, filePath,config) {
 //代码优化
     try {
         const stats = await stat(filePath);

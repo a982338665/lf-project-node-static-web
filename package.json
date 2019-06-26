@@ -1,0 +1,29 @@
+{
+  "name": "node-static-web",
+  "version": "1.0.0",
+  "description": "静态资源服务器",
+  "main": "src/app.js",
+  "bin":{
+    "node-static-web":"bin/node-static-web"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "express": "^4.17.1",
+    "handlebars": "^4.1.2",
+    "yargs": "^13.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a982338665/node-static-web.git"
+  },
+  "author": "luofeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a982338665/node-static-web/issues"
+  },
+  "homepage": "https://github.com/a982338665/node-static-web#readme"
+}
