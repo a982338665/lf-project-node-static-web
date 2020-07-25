@@ -24,4 +24,8 @@ const argv = yargs
     .argv;
 
 const server = new Server(argv);
+// for(var xxx in process.argv){
+//     console.error(xxx+"||"+process.env[xxx]);
+// }
+
 server.start();

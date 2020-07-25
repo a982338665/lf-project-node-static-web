@@ -13,8 +13,11 @@ const openUrl = require('./helper/openUrl');
 //服务改造 --> 将启动方式封装待调用
 class Server {
     constructor (config){
-        //合并配置文件
+        //合并配置文件:
         this.conf = Object.assign({},conf,config);
+        for (let xxx in this.conf){
+            console.error(xxx+"|||||"+this.conf[xxx])
+        }
     }
     start(){
         const server = http.createServer((req,res)=>{
